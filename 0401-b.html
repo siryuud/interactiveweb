@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+    <style>
+      #haha {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 255, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="haha" onClick="hahaClick()">박스다박스!</div>
+    <script>
+      let title = ["Hello", "World", "Babo", "Hoho", "Gogo", "Gugu", "Gugi"];
+      function hahaClick() {
+        //alert("박스 클릭!");
+        let box = document.getElementById("haha");
+        let num = parseInt(Math.random() * title.length);
+        console.log(num);
+        box.innerHTML = title[num];
+        let w = parseInt(Math.random() * 100);
+        let h = parseInt(Math.random() * 100);
+      }
+    </script>
+  </body>
+</html>

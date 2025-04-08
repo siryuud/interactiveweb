@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5 기초</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap");
+      body {
+        margin: 0px;
+        background-image: url("http://newtdc.com/hoho1.jpg");
+        background-size: cover;
+      }
+      div {
+        font-family: "Noto Serif KR", Helvetica, sans-serif;
+        text-align: center;
+        font-weight: 700;
+        font-size: 10pt;
+        line-height: 40px;
+      }
+      .menubox {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .topmenu {
+        flex-basis: 20%;
+        transition: 1s;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      .topmenu:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+      .submenu {
+        transition: 0.5s;
+        background-color: rgba(255, 255, 0, 0);
+      }
+      .submenu:hover {
+        background-color: rgba(255, 255, 0, 0.3);
+      }
+      .menusub {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function showbox(dpname) {
+        let box = document.getElementById(dpname);
+        box.style.display = "block";
+      }
+    </script>
+    <div class="menubox">
+      <div class="topmenu">ABOUT</div>
+      <div class="topmenu" onClick="showbox('submenu1')">
+        GALLERY
+        <div class="menusub" id="submenu1">
+          <div class="submenu">PHOTO</div>
+          <div class="submenu">DRAWING</div>
+          <div class="submenu">DESIGN</div>
+          <div class="submenu">DOODLE</div>
+        </div>
+      </div>
+      <div class="topmenu" onClick="showbox('submenu2')">
+        NEWS
+        <div class="menusub" id="submenu2">
+          <div class="submenu">RECENT</div>
+          <div class="submenu">FEATURED</div>
+          <div class="submenu">OLD</div>
+        </div>
+      </div>
+      <div class="topmenu">CV</div>
+    </div>
+  </body>
+</html>

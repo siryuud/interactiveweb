@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>레몬 이미지</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #fff;
+      }
+      img {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="lemon" src="lemon.png" alt="레몬 이미지" onclick="changeImage()" />
+    <script>
+      function changeImage() {
+        const lemon = document.getElementById("lemon");
+        lemon.src = "lemon.webp";
+        lemon.alt = "레몬 비타민C 정보 이미지";
+      }
+    </script>
+  </body>
+</html>

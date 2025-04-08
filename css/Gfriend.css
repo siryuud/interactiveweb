@@ -5,80 +5,90 @@ body {
   padding: 0;
   font-family: "Noto Serif", serif;
 }
+
 .box {
   position: relative;
   width: 25%;
   height: 50vh;
   box-sizing: border-box;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  color: white;
-  font-size: 1.5em;
+  perspective: 1000px;
 }
-.box::before {
-  content: "";
+
+.box > div {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, background-color 0.3s ease;
+}
+
+.front {
   background-size: cover;
   background-position: center;
-  transition: background-color 0.3s ease;
 }
-.box1::before {
+
+.box1 .front {
   background-image: url("../logo.webp");
 }
-.box2::before {
+
+.box2 .front {
   background-image: url("../sowon.webp");
 }
-.box3::before {
+
+.box3 .front {
   background-image: url("../yerin.webp");
 }
-.box4::before {
+
+.box4 .front {
   background-image: url("../eunha.webp");
 }
-.box5::before {
+
+.box5 .front {
   background-image: url("../yuju.webp");
 }
-.box6::before {
+
+.box6 .front {
   background-image: url("../sinb.webp");
 }
-.box7::before {
+
+.box7 .front {
   background-image: url("../umji.webp");
 }
-.box8::before {
+
+.box8 .front {
   background-image: url("../gfriend.webp");
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+.back {
+  background-color: #333;
+  color: white;
+  transform: rotateY(180deg);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+}
+
+.box:hover .front {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.box.flipped .back {
+  transform: rotateY(0);
+}
+
+.overlay {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  transition: opacity 0.3s ease;
 }
-.box:hover::before {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.box:hover .overlay {
-  opacity: 1;
-}
+
 .name {
   font-size: 2em;
   margin-bottom: 0.5em;
 }
+
 .details {
   font-size: 1em;
 }
