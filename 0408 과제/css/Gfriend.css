@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", serif;
+}
+
+.box {
+  position: relative;
+  width: 25%;
+  height: 50vh;
+  box-sizing: border-box;
+  perspective: 1000px;
+}
+
+.box > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease, background-color 0.3s ease;
+}
+
+.front {
+  background-size: cover;
+  background-position: center;
+}
+
+.box1 .front {
+  background-image: url("../logo.webp");
+}
+
+.box2 .front {
+  background-image: url("../sowon.webp");
+}
+
+.box3 .front {
+  background-image: url("../yerin.webp");
+}
+
+.box4 .front {
+  background-image: url("../eunha.webp");
+}
+
+.box5 .front {
+  background-image: url("../yuju.webp");
+}
+
+.box6 .front {
+  background-image: url("../sinb.webp");
+}
+
+.box7 .front {
+  background-image: url("../umji.webp");
+}
+
+.box8 .front {
+  background-image: url("../gfriend.webp");
+}
+
+.back {
+  background-color: #333;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box:hover .front {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.box.flipped .front {
+  transform: rotateY(180deg);
+}
+
+.box.flipped .back {
+  transform: rotateY(0);
+}
+
+.overlay {
+  text-align: center;
+}
+
+.name {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.details {
+  font-size: 1em;
+}
