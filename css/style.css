@@ -1,0 +1,31 @@
+#info {
+  height: 50px;
+  padding: 10px;
+  font-family: sans-serif;
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  width: 100vw;
+  height: calc(100vh - 50px);
+}
+
+.cell {
+  border: 1px solid #ddd;
+  background: white;
+  transition: background 0.2s;
+}
+
+.cell:hover {
+  background: lightblue;
+  cursor: pointer;
+}
+
+#picker {
+  position: absolute;
+  display: none;
+}
